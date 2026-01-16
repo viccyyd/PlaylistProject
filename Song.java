@@ -1,6 +1,6 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author Victoria and Kaitlyn
+ * @author Victoria and Kaitlyn (with help from Mr. White!)
  * @version Jan 14, 2026
  */
 
