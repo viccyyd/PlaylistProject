@@ -3,18 +3,18 @@
  * @author
  * @version
  */
+
+import java.util.ArrayList;
+
 public class Song {
     //Fields-- what information do we want each Song to store?
-
-
-
+    
 
     /**
      * Constructor-- what information needs to be given to make a Song?
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
-
-
+    
 
 
 
@@ -25,6 +25,4 @@ public class Song {
       * song easily as well!
       * What kind of mutator (setter) methods will you need?
       */
-
-
 }
