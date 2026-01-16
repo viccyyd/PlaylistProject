@@ -3,18 +3,24 @@
  * @author Victoria and Kaitlyn
  * @version Jan 14, 2026
  */
+
+import java.util.ArrayList;
+
 public class Song {
     //Fields-- what information do we want each Song to store?
     
+
     private String name;
     private String artist;
     private int seconds;
     private boolean liked;
 
+
     /**
      * Constructor-- what information needs to be given to make a Song?
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
+
 
     public Song()
     {
@@ -23,6 +29,11 @@ public class Song {
         this.seconds = seconds;
         this.liked = false;
     }
+
+    
+
+
+
 
      /**
       * Methods-- what will you want each Song to do?
@@ -89,5 +100,6 @@ public class Song {
     }
 
     return result;
+
 }
 }
