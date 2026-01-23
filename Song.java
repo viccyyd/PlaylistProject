@@ -3,9 +3,6 @@
  * @author Victoria and Kaitlyn (with help from Mr. White!)
  * @version Jan 14, 2026
  */
-
-import java.util.ArrayList;
-
 public class Song {
     //Fields-- what information do we want each Song to store?
     
@@ -22,18 +19,13 @@ public class Song {
      */
 
 
-    public Song()
+    public Song(String name, String artist, int seconds)
     {
         this.name = name;
         this.artist = artist;
         this.seconds = seconds;
         this.liked = false;
     }
-
-    
-
-
-
 
      /**
       * Methods-- what will you want each Song to do?
@@ -85,21 +77,19 @@ public class Song {
 
     private String duration() {
         int minutes = seconds / 60;
-        int secs = seconds % 60;
+        int secs = seconds % 60; //will give left over/remainder secs
         if (secs < 10) {
-            return minutes + ":0" + secs;
+         return minutes + ":0" + secs;
         }
-        return minutes + ":0" + secs;
+         return minutes + ":" + secs;
     }
     
     public String toString() {
     String result = name + " by " + artist + " (" + duration() + ")";
-
     if (liked) {
         result += " -- liked";
     }
 
     return result;
-
 }
 }
