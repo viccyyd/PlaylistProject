@@ -17,7 +17,7 @@ public class Playlist
      * (CarDealership, Zoo) for structure on how this will look
      */
 
-    private ArrayList<Song>playlist;
+    private ArrayList<Song> playlist;
 
     /**
       * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
@@ -58,7 +58,7 @@ public class Playlist
         {
             if (song.getName().equals(title))
             {
-                song.status();
+                song.setLiked(true);
             }
         }
     }
@@ -85,7 +85,8 @@ public class Playlist
     {
         for (Song song : playlist)
         {
-            System.out.println("\"" + song.getName() + "\" by " + song.getArtist() + " (" + song.getDuration() + ")");
+            System.out.println(song);
+            /*System.out.println("\"" + song.getName() + "\" by " + song.getArtist() + " (" + song.getDuration() + ")");*/
         }
     }
 
@@ -96,9 +97,10 @@ public class Playlist
     {
         for (Song song : playlist)
         {
-            if (song.status() == true)
+            if (song.isLiked())
             {
-                system.out.println("\"" + song.getName() + "\" by " + song.getArtist() + " (" + song.getDuration() + ")");
+                System.out.println(song);
+                /*System.out.println("\"" + song.getName() + "\" by " + song.getArtist() + " (" + song.getDuration() + ")");*/
             }
         }
     }
@@ -107,14 +109,20 @@ public class Playlist
      * Returns the total duration of all songs in the playlist
      * @return the total duration of the playlist in minutes and seconds
      */
-    publicString getTotalDuration()
+    public String getTotalDuration()
     {
-        int totaltime = 0;
+        int totalTime = 0;
         for(Song song : playlist)
         {
-            totaltime += song.getDuration();
+            totalTime += song.getSeconds();
         }
-        return (totaltime/60) + ":" + (totaltime%60);
+        int minutes = totalTime / 60;
+        int secs = totalTime % 60; //will give left over/remainder secs
+        if (secs < 10) {
+         return minutes + ":0" + secs;
+        }
+         return minutes + ":" + secs;
+        /*return (totalTime/60) + ":" + (totalTime%60);*/
     }
 
     /**
@@ -124,7 +132,7 @@ public class Playlist
     {
         for (int i = playlist.size()-1; i >= 0; i--)
         {
-            if(!playlist.get(i).status())
+            if(!playlist.get(i).isLiked())
             {
                 playlist.remove(i);
             }
